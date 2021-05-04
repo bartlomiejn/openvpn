@@ -705,6 +705,10 @@ x_check_status(int status,
             {
                 platform_sleep_milliseconds(x_cs_err_delay_ms);
             }
+            else if (my_errno == ENETUNREACH)
+            {
+                platform_sleep_milliseconds(5000);
+            }
         }
         gc_free(&gc);
     }
